@@ -1,0 +1,2 @@
+-- list 	 = double linked list 
+-- forward list  = single linked list 

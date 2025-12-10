@@ -1,0 +1,219 @@
+✅ CMake
+
+A build system generator
+
+Writes your build configuration
+
+Produces Makefiles / Ninja files / VS projects
+
+Does NOT compile code by itself
+
+Helps organize large projects
+
+✅ Make / Makefile
+
+A build tool
+
+Compiles your source files
+
+Uses compiler commands (g++, clang++)
+
+Reads rules you write manually
+
+Runs commands like:
+
+g++ -c main.cpp
+g++ main.o -o app
+
+🟥 GDB
+
+GDB is neither a build system nor a build tool.
+
+GDB is a debugger.
+
+It lets you examine your program while it is running or crashed.
+
+You use it to:
+
+Run your program step by step
+
+Set breakpoints
+
+See variable values
+
+Inspect memory/registers
+
+Debug segmentation faults
+
+Backtrace crashes
+
+Watch variable changes
+
+Debug multi-threaded programs
+
+Debug optimized code
+
+Example commands:
+
+gdb ./app
+(gdb) break main
+(gdb) run
+(gdb) next
+(gdb) print x
+(gdb) backtrace
+
+🧠 How all three fit together
+
+Here is the workflow:
+
+1️⃣ CMake
+
+Generates Makefiles automatically.
+
+2️⃣ Makefile (Make)
+
+Compiles your code into an executable.
+
+3️⃣ GDB
+
+Debugs the executable.
+
+1. Starting GDB
+Start GDB with your program
+gdb ./myprogram
+
+Run the program
+run          # or just 'r'
+
+
+If your program needs arguments:
+
+run arg1 arg2
+
+🟥 2. Breakpoints (stopping points)
+Set a breakpoint at the beginning of main
+break main
+
+Set a breakpoint at a specific line
+break file.cpp:25
+
+Set a breakpoint on a function
+break myFunction
+
+List all breakpoints
+info breakpoints
+
+Delete a breakpoint
+delete 1    # 1 = breakpoint number
+
+🟩 3. Running & Stepping
+
+When the program stops at a breakpoint:
+
+Step line-by-line (enter functions)
+step        # or 's'
+
+Next line (skip function bodies)
+next        # or 'n'
+
+Continue until next breakpoint
+continue    # or 'c'
+
+Finish current function
+finish
+
+🟨 4. Inspecting Variables
+Print the value of a variable
+print x       # or 'p x'
+
+Print a pointer’s content
+print *ptr
+
+Print a C++ object’s fields
+print myObj
+
+Print with formatting
+print/x x     # print hex
+print/d x     # print decimal
+print/t x     # print binary
+
+🟪 5. Inspecting Execution State
+Get a stack trace (very important for crashes)
+backtrace        # or 'bt'
+
+
+Shows which function calls led to the crash.
+
+Go to a specific frame in the stack
+frame 2         # frame number
+
+Show all local variables in the current frame
+info locals
+
+Show function arguments
+info args
+
+🟫 6. Watching variables (automatic stop when changed)
+Stop the program when a variable changes
+watch x
+
+Stop when memory at an address changes
+watch *ptr
+
+🟧 7. Memory and Assembly (optional unless needed)
+Examine raw memory
+x/10xw 0x7fff1234    # 10 words in hex
+
+
+Syntax:
+
+x / number format size address
+
+
+Format examples:
+
+x = hex
+
+d = decimal
+
+s = string
+
+Size examples:
+
+b = byte
+
+h = halfword
+
+w = word
+
+g = giant
+
+🟫 8. Controlling the Program
+Quit GDB
+quit        # or 'q'
+
+Restart the program
+run
+
+⚙️ 9. Compile with debug symbols (important)
+
+To use GDB properly, compile your code with -g:
+
+g++ -g main.cpp -o app
+
+
+Or in CMake:
+
+set(CMAKE_BUILD_TYPE Debug)
+
+🧠 Most Important Commands (quick recap)
+Purpose	Command
+Start program	run
+Set breakpoint	break
+Step into	step
+Step over	next
+Continue	continue
+Print variable	print x
+Stack trace	backtrace
+Watch variable	watch x
+Quit	quit

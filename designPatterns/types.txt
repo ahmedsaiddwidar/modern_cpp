@@ -1,0 +1,64 @@
+1. Creational Design Patterns
+
+These patterns deal with object creation.
+They help control how objects are created to make the system more flexible and efficient.
+
+Creational Patterns
+
+Singleton
+
+Factory Method
+
+Abstract Factory
+
+Builder
+
+Prototype
+
+🎯 2. Structural Design Patterns
+
+These patterns explain how classes and objects are combined to form larger structures while keeping flexibility and efficiency.
+
+Structural Patterns
+
+Adapter
+
+Bridge
+
+Composite
+
+Decorator
+
+Facade
+
+Flyweight
+
+Proxy
+
+⚙️ 3. Behavioral Design Patterns
+
+These patterns focus on communication between objects — how they interact and distribute responsibility.
+
+Behavioral Patterns
+
+Observer
+
+Strategy
+
+Command
+
+Iterator
+
+Mediator
+
+State
+
+Template Method
+
+Chain of Responsibility
+
+Visitor
+
+Memento
+
+Interpreter
