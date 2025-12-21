@@ -98,6 +98,8 @@ int main() {
     // INSTANT copy. No 2-second wait.
     auto salesReportPtr = masterTemplate->clone();
     // Cast back to concrete type to customize
+    //You cannot press the specific "customize" button yet, because the Universal Remote doesn't have it.
+    //You need a way to trade the Universal Remote for the specific one. That is what dynamic_cast does.
     auto salesReport = dynamic_cast<CorporateReport*>(salesReportPtr.get());
     if (salesReport) {
         salesReport->customizeReport("SALES", "Q3 revenue is up 15%. Good job.");
