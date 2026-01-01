@@ -1,5 +1,7 @@
  What Is Operator Overloading?
 
+ Operator overloading is just a way to give a standard-looking function a funny-looking name.
+
 C++ lets you redefine the meaning of operators (+, -, *, ==, etc.) for your own classes — so that objects can behave like built-in types.
 ❓Why?
 

@@ -184,3 +184,115 @@ example from matirail ui:
 <Button color={isActive ? "primary" : "secondary"}>Click Me</Button>
 
 const color = isActive ? "success" : "error";
+
+***********************************************************************************************
+***********************************************************************************************
+***********************************************************************************************
+
+7- react components: are just javescript functions that return UI 
+
+const MyComponent = () => {
+    return <div>hello world</div>;
+};
+
+const: Yes
+() =>:	Arrow function
+return:	Shows UI
+<div>:	Just something to show
+
+but what is component with data inside?
+
+const Dataset = (){
+    const name = "sales data";
+    return <div>{name}</div> //{name} → means “put JavaScript here”
+}; 
+
+how with connecting .map() wiht components?
+
+const TableList = () = {
+
+    const tables = ["table a", "table b", "table c"];
+
+
+    // Read it slowly:
+
+    // Component runs
+
+    // tables exists
+
+    // .map() creates many <div>
+
+    // React renders them
+    return(
+        <div>
+
+        {
+          tables.map((table) => (<div>{table}</div>))
+        }
+
+        </div>
+    );
+};
+
+now let us move to props: // data passed into components(Props = function parameters)
+
+const TableList = (props) => {
+  return <div>{props.title}</div>;
+};
+
+Instead of:
+
+const TableList = (props) => {
+  return <div>{props.title}</div>;
+};
+
+
+We do:
+
+const TableList = ({ title }) => {
+  return <div>{title}</div>;
+};
+
+This is object destructuring, same as before.
+
+Props + .map() together (REAL React pattern)
+
+const TableList = ({ tables }) => {
+  return (
+    <div>
+      {tables.map((table) => (
+        <div>{table}</div>
+      ))}
+    </div>
+  );
+};
+
+Very important rule (React law ⚖️)
+
+Components do NOT care where data comes from
+They only render what they receive
+
+This makes React reusable.
+
+
+***********************************************************************************************
+***********************************************************************************************
+***********************************************************************************************
+
+const Buttons = ({ items }) => {
+  return (
+    <div>
+      {items.map((item) => (
+        <button>{item}</button>
+      ))}
+    </div>
+  );
+};
+
+Used as:
+
+<Buttons items={["Save", "Cancel"]} />
+
+***********************************************************************************************
+***********************************************************************************************
+***********************************************************************************************
